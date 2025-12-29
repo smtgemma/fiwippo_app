@@ -30,7 +30,7 @@ class OnboardingController extends GetxController {
     currentIndex.value = index;
   }
 
-  void nextPage() {
+  nextPage() {
     if (currentIndex.value < onboardingData.length - 1) {
       pageController.nextPage(
         duration: const Duration(milliseconds: 300),

@@ -4,8 +4,16 @@ import '../modules/active_tickets/bindings/active_tickets_binding.dart';
 import '../modules/active_tickets/views/active_tickets_view.dart';
 import '../modules/affiliate_dashboard/bindings/affiliate_dashboard_binding.dart';
 import '../modules/affiliate_dashboard/views/affiliate_dashboard_view.dart';
+import '../modules/auth/OTP_Verify/bindings/o_t_p_verify_binding.dart';
+import '../modules/auth/OTP_Verify/views/o_t_p_verify_view.dart';
+import '../modules/auth/auth_select/bindings/auth_select_binding.dart';
+import '../modules/auth/auth_select/views/auth_select_view.dart';
 import '../modules/auth/forgot_password/bindings/forgot_password_binding.dart';
 import '../modules/auth/forgot_password/views/forgot_password_view.dart';
+import '../modules/auth/reset_pass/bindings/reset_pass_binding.dart';
+import '../modules/auth/reset_pass/views/reset_pass_view.dart';
+import '../modules/auth/reset_success/bindings/reset_success_binding.dart';
+import '../modules/auth/reset_success/views/reset_success_view.dart';
 import '../modules/auth/sign_in/bindings/sign_in_binding.dart';
 import '../modules/auth/sign_in/views/sign_in_view.dart';
 import '../modules/auth/sign_up/bindings/sign_up_binding.dart';
@@ -32,12 +40,16 @@ import '../modules/onboarding/bindings/onboarding_binding.dart';
 import '../modules/onboarding/views/onboarding_view.dart';
 import '../modules/order_history_invoice/bindings/order_history_invoice_binding.dart';
 import '../modules/order_history_invoice/views/order_history_invoice_view.dart';
+import '../modules/set_location_screen/bindings/set_location_screen_binding.dart';
+import '../modules/set_location_screen/views/set_location_screen_view.dart';
 import '../modules/shop/bindings/shop_binding.dart';
 import '../modules/shop/views/shop_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 import '../modules/user_profile/bindings/user_profile_binding.dart';
 import '../modules/user_profile/views/user_profile_view.dart';
+import '../modules/verification_success/bindings/verification_success_binding.dart';
+import '../modules/verification_success/views/verification_success_view.dart';
 import '../modules/wallet/bindings/wallet_binding.dart';
 import '../modules/wallet/views/wallet_view.dart';
 
@@ -148,6 +160,41 @@ class AppPages {
       name: _Paths.CHATBOT,
       page: () => const ChatbotView(),
       binding: ChatbotBinding(),
+    ),
+    GetPage(
+      name: _Paths.AUTH_SELECT,
+      page: () => const AuthSelectView(),
+      binding: AuthSelectBinding(),
+    ),
+    GetPage(
+      name: _Paths.AUTH_SELECT,
+      page: () => const AuthSelectView(),
+      binding: AuthSelectBinding(),
+    ),
+    GetPage(
+      name: _Paths.OTP_VERIFY,
+      page: () => const OTPVerifyView(),
+      binding: OTPVerifyBinding(),
+    ),
+    GetPage(
+      name: _Paths.SET_LOCATION_SCREEN,
+      page: () => const SetLocationScreenView(),
+      binding: SetLocationScreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.VERIFICATION_SUCCESS,
+      page: () => const VerificationSuccessView(),
+      binding: VerificationSuccessBinding(),
+    ),
+    GetPage(
+      name: _Paths.RESET_PASS,
+      page: () => const ResetPassView(),
+      binding: ResetPassBinding(),
+    ),
+    GetPage(
+      name: _Paths.RESET_SUCCESS,
+      page: () => const ResetSuccessView(),
+      binding: ResetSuccessBinding(),
     ),
   ];
 }
