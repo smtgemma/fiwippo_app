@@ -23,6 +23,12 @@ abstract class Routes {
   static const DATA_AND_PRIVACY = _Paths.DATA_AND_PRIVACY;
   static const ACTIVE_TICKETS = _Paths.ACTIVE_TICKETS;
   static const CHATBOT = _Paths.CHATBOT;
+  static const AUTH_SELECT = _Paths.AUTH_SELECT;
+  static const OTP_VERIFY = _Paths.OTP_VERIFY;
+  static const SET_LOCATION_SCREEN = _Paths.SET_LOCATION_SCREEN;
+  static const VERIFICATION_SUCCESS = _Paths.VERIFICATION_SUCCESS;
+  static const RESET_PASS = _Paths.RESET_PASS;
+  static const RESET_SUCCESS = _Paths.RESET_SUCCESS;
 }
 
 abstract class _Paths {
@@ -47,4 +53,10 @@ abstract class _Paths {
   static const DATA_AND_PRIVACY = '/data-and-privacy';
   static const ACTIVE_TICKETS = '/active-tickets';
   static const CHATBOT = '/chatbot';
+  static const AUTH_SELECT = '/auth_select';
+  static const OTP_VERIFY = '/otp_verify';
+  static const SET_LOCATION_SCREEN = '/set-location-screen';
+  static const VERIFICATION_SUCCESS = '/verification-success';
+  static const RESET_PASS = '/reset-pass';
+  static const RESET_SUCCESS = '/reset-success';
 }

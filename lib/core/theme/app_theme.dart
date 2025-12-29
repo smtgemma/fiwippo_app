@@ -45,7 +45,7 @@ class AppTheme {
 
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: Colors.white,
+      fillColor: Color(0xffF7F7F7),
       contentPadding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 16.w),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12.r),

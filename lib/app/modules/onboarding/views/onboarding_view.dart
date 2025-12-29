@@ -1,20 +1,16 @@
 import 'package:fiwippo_ecommerce_app/app/modules/onboarding/controllers/onboarding_controller.dart';
+import 'package:fiwippo_ecommerce_app/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_instance/src/extension_instance.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:get/get.dart';
 
-class OnboardingView extends StatelessWidget {
-  OnboardingView({super.key});
-
-  final controller = Get.put(OnboardingController());
+class OnboardingView extends GetView<OnboardingController> {
+  const OnboardingView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          /// PageView
           PageView.builder(
             controller: controller.pageController,
             itemCount: controller.onboardingData.length,
@@ -27,7 +23,6 @@ class OnboardingView extends StatelessWidget {
                   Image.asset(data['image']!, fit: BoxFit.cover),
                   Container(color: Colors.black.withOpacity(0.4)),
 
-                  /// Text Section (CENTER aligned)
                   Align(
                     alignment: Alignment.bottomCenter,
                     child: Padding(
@@ -67,7 +62,6 @@ class OnboardingView extends StatelessWidget {
             },
           ),
 
-          /// Skip Button (Top Left)
           Positioned(
             top: 50,
             right: 20,
@@ -90,7 +84,6 @@ class OnboardingView extends StatelessWidget {
             ),
           ),
 
-          /// Bottom Controls
           Positioned(
             bottom: 40,
             left: 0,
@@ -99,7 +92,6 @@ class OnboardingView extends StatelessWidget {
               padding: const EdgeInsets.all(12.0),
               child: Column(
                 children: [
-                  /// Dots Indicator
                   Obx(() {
                     return Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -124,13 +116,19 @@ class OnboardingView extends StatelessWidget {
 
                   const SizedBox(height: 20),
 
-                  /// Next Button
                   Padding(
                     padding: const EdgeInsets.all(12.0),
-                    child: ElevatedButton(
-                      onPressed: controller.nextPage,
-                      child: Obx(
-                        () => Text(
+                    child: Obx(
+                      () => ElevatedButton(
+                        onPressed: () {
+                          if (controller.currentIndex.value ==
+                              controller.onboardingData.length - 1) {
+                            Get.offAllNamed(Routes.AUTH_SELECT);
+                          } else {
+                            controller.nextPage();
+                          }
+                        },
+                        child: Text(
                           controller.currentIndex.value ==
                                   controller.onboardingData.length - 1
                               ? "Continue"
